@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.DashboardFragment"
+    android:background="@drawable/tloapka">
+
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:columnCount="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/cardview_width"
+            android:layout_height="wrap_content"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="0"
+            app:cardBackgroundColor="#00E4FFE5">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/cardview_width"
+            android:layout_height="wrap_content"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="1"
+            app:cardBackgroundColor="#00E4FFE5">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="80dp"
+                android:textSize="@dimen/big_textsize"
+                android:drawablePadding="@dimen/small_padding"
+                android:text="@string/behaviour"
+                app:drawableRightCompat="@drawable/ic_baseline_favorite_24" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/cardview_width"
+            android:layout_height="wrap_content"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_row="0"
+            app:cardBackgroundColor="#00E4FFE5">
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/cardview_width"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#00E4FFE5"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_row="1">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:textSize="@dimen/big_textsize"
+                android:drawablePadding="@dimen/small_padding"
+                android:text="@string/duties"
+                app:drawableRightCompat="@drawable/ic_baseline_check_24" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/top_padding">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_childName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/child_name"
+            android:padding="@dimen/small_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconDrawable="@drawable/ic_baseline_person_pin_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/textfield_height"
+                android:text="" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/repeat_duties"
+            android:padding="@dimen/small_padding"
+            android:paddingBottom="@dimen/small_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textField_childName"
+            app:startIconDrawable="@drawable/ic_baseline_calendar_today_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/textfield_height"
+                android:text="" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewChildAssignedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/small_padding"
+            android:paddingTop="@dimen/big_padding"
+            android:text="@string/child_assignment"
+            android:textSize="@dimen/big_textsize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textField_repeat" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+
+            app:columnCount="4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewChildAssignedLabel">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_padding"
+                app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_row="0"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/firstavatar" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_padding"
+                app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_row="0"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/secondavatar" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_padding"
+                app:layout_column="2"
+                app:layout_columnWeight="1"
+                app:layout_row="0"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/thirdavatar" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_padding"
+                app:layout_column="3"
+                app:layout_columnWeight="1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_row="0"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/fourthavatar" />
+            </androidx.cardview.widget.CardView>
+        </androidx.gridlayout.widget.GridLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/buttonAddChild"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="@dimen/button_marginBottom"
+        android:background="#A263EF"
+        android:text="@string/add_child"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

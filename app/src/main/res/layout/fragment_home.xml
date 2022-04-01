@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.mynewapplication.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pink_background"
+        tools:context=".ui.home.HomeFragment">
+
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chils_rewards"
+            android:textAlignment="center"
+            android:textSize="@dimen/big_textsize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:columnCount="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_home">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:contentPadding="@dimen/small_padding"
+                app:cardBackgroundColor="@color/pink_cardBackgroundColor"
+                android:layout_margin="@dimen/small_margin"
+                app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_row="0"
+                app:cardCornerRadius="@dimen/medium_corner">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutForAvatarId1"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@id/textView2"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/linearLayoutForStatsId1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="@dimen/image_layout_height"
+                            android:layout_height="@dimen/image_layout_height"
+                            android:src="@drawable/firstavatar"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutForStatsId1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@id/textView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/medium_padding"
+                            android:text="@string/points"
+                            android:textSize="@dimen/medium_textsize"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageView1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/imie"
+                        android:textSize="@dimen/big_textsize"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayoutForAvatarId1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                app:cardBackgroundColor="@color/pink_cardBackgroundColor"
+                app:contentPadding="@dimen/small_padding"
+                app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_row="0"
+                app:cardCornerRadius="@dimen/medium_corner">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutForAvatarId2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@id/textView4"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/linearLayoutForStatsId2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="@dimen/image_layout_height"
+                            android:layout_height="@dimen/image_layout_height"
+                            android:src="@drawable/secondavatar"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutForStatsId2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@id/textView4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/medium_padding"
+                            android:text="@string/points"
+                            android:textSize="@dimen/medium_textsize"
+                            app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/imie"
+                        android:textSize="@dimen/big_textsize"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:contentPadding="@dimen/small_padding"
+                app:cardBackgroundColor="@color/pink_cardBackgroundColor"
+                android:layout_margin="@dimen/small_margin"
+                app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_row="1"
+                app:cardCornerRadius="@dimen/medium_corner">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutForAvatarId3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@id/textView6"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/linearLayoutForStatsId3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="@dimen/image_layout_height"
+                            android:layout_height="@dimen/image_layout_height"
+                            android:src="@drawable/thirdavatar"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutForStatsId3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@id/textView6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/medium_padding"
+                            android:text="@string/points"
+                            android:textSize="@dimen/medium_textsize"
+                            app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/imie"
+                        android:textSize="@dimen/big_textsize"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:contentPadding="@dimen/small_padding"
+                app:cardBackgroundColor="@color/pink_cardBackgroundColor"
+                android:layout_margin="@dimen/small_margin"
+                app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_row="1"
+                app:cardCornerRadius="@dimen/medium_corner">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutForAvatarId4"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toTopOf="@id/textView8"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@+id/linearLayoutForStatsId4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="@dimen/image_layout_height"
+                            android:layout_height="@dimen/image_layout_height"
+                            android:src="@drawable/fourthavatar"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutForStatsId4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@id/textView8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/medium_padding"
+                            android:text="@string/points"
+                            android:textSize="@dimen/medium_textsize"
+                            app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/imie"
+                        android:textSize="@dimen/big_textsize"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <Button
+            android:id="@+id/buttonAddChild"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginBottom="@dimen/button_marginBottom"
+            android:background="#A263EF"
+            android:text="@string/add_child"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="@{()->viewModel.onClickAddChild()}"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
