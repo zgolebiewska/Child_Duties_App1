@@ -8,5 +8,5 @@ data class Child (
     var behaviorPoints: Int = 0,
     var dutyPoints: Int = 0,
     var drawableName: String = "",
-    var birthday: Date,
+//    var birthday: Date,
         )

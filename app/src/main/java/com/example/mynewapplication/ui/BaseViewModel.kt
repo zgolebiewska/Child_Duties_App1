@@ -1,4 +1,4 @@
-package com.kidsgamesprojects.childduties.ui
+package com.example.mynewapplication.ui
 
 import android.os.Bundle
 import android.util.Log

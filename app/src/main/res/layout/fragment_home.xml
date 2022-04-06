@@ -7,6 +7,9 @@
         <variable
             name="viewModel"
             type="com.example.mynewapplication.ui.home.HomeViewModel" />
+        <variable
+            name="resourceUtils"
+            type="com.example.mynewapplication.utils.ResourceUtils" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,7 +68,7 @@
                             android:id="@+id/imageView1"
                             android:layout_width="@dimen/image_layout_height"
                             android:layout_height="@dimen/image_layout_height"
-                            android:src="@drawable/firstavatar"
+                            android:imageResource='@{resourceUtils.getResourceDrawableId(viewModel.childList.size()>=1? viewModel.childList.get(0).drawableName: "pies",context)}'
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,7 +88,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:drawablePadding="@dimen/medium_padding"
-                            android:text="@string/points"
+                            android:text='@{viewModel.childList.size()>=1? Integer.toString(viewModel.childList.get(0).behaviorPoints):"", default = 0}'
                             android:textSize="@dimen/medium_textsize"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView1"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -93,13 +96,24 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
 
+                        <TextView
+                            android:id="@+id/textViewDutyPointsCard1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/medium_padding"
+                            android:textSize="@dimen/medium_textsize"
+                            android:text='@{viewModel.childList.size()>=1? Integer.toString(viewModel.childList.get(0).dutyPoints):"", default = 0}'
+                            app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                            />
+
+
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/imie"
+                        android:text='@{viewModel.childList.size()>=1? viewModel.childList.get(0).name: "", default = "NAME"}'
                         android:textSize="@dimen/big_textsize"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +150,7 @@
                             android:id="@+id/imageView2"
                             android:layout_width="@dimen/image_layout_height"
                             android:layout_height="@dimen/image_layout_height"
-                            android:src="@drawable/secondavatar"
+                            android:imageResource='@{resourceUtils.getResourceDrawableId(viewModel.childList.size()>=1? viewModel.childList.get(1).drawableName: "pies",context)}'
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
@@ -155,16 +169,25 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:drawablePadding="@dimen/medium_padding"
-                            android:text="@string/points"
+                            android:text='@{viewModel.childList.size()>=1? Integer.toString(viewModel.childList.get(1).behaviorPoints):"", default = 0}'
                             android:textSize="@dimen/medium_textsize"
                             app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                        <TextView
+                            android:id="@+id/textViewDutyPointsCard2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/medium_padding"
+                            android:textSize="@dimen/medium_textsize"
+                            android:text='@{viewModel.childList.size()>=1? Integer.toString(viewModel.childList.get(1).dutyPoints):"", default = 0}'
+                            app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                            />
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/imie"
+                        android:text='@{viewModel.childList.size()>=1? viewModel.childList.get(1).name: "", default = "NAME"}'
                         android:textSize="@dimen/big_textsize"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -202,7 +225,7 @@
                             android:id="@+id/imageView3"
                             android:layout_width="@dimen/image_layout_height"
                             android:layout_height="@dimen/image_layout_height"
-                            android:src="@drawable/thirdavatar"
+                            android:imageResource='@{resourceUtils.getResourceDrawableId(viewModel.childList.size()>=1? viewModel.childList.get(2).drawableName: "pies",context)}'
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
@@ -221,16 +244,25 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:drawablePadding="@dimen/medium_padding"
-                            android:text="@string/points"
+                            android:text='@{viewModel.childList.size()>=1? Integer.toString(viewModel.childList.get(2).behaviorPoints):"", default = 0}'
                             android:textSize="@dimen/medium_textsize"
                             app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                        <TextView
+                            android:id="@+id/textViewDutyPointsCard3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/medium_padding"
+                            android:textSize="@dimen/medium_textsize"
+                            android:text='@{viewModel.childList.size()>=1? Integer.toString(viewModel.childList.get(2).dutyPoints):"", default = 0}'
+                            app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                            />
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/imie"
+                        android:text='@{viewModel.childList.size()>=1? viewModel.childList.get(2).name: "", default = "NAME"}'
                         android:textSize="@dimen/big_textsize"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -269,7 +301,7 @@
                             android:id="@+id/imageView4"
                             android:layout_width="@dimen/image_layout_height"
                             android:layout_height="@dimen/image_layout_height"
-                            android:src="@drawable/fourthavatar"
+                            android:imageResource='@{resourceUtils.getResourceDrawableId(viewModel.childList.size()>=1? viewModel.childList.get(3).drawableName: "pies",context)}'
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
@@ -288,16 +320,25 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:drawablePadding="@dimen/medium_padding"
-                            android:text="@string/points"
+                            android:text='@{viewModel.childList.size()>=1? Integer.toString(viewModel.childList.get(3).behaviorPoints):"", default = 0}'
                             android:textSize="@dimen/medium_textsize"
                             app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                        <TextView
+                            android:id="@+id/textViewDutyPointsCard4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/medium_padding"
+                            android:textSize="@dimen/medium_textsize"
+                            android:text='@{viewModel.childList.size()>=1? Integer.toString(viewModel.childList.get(3).dutyPoints):"", default = 0}'
+                            app:drawableLeftCompat="@drawable/ic_baseline_send_10" />
+                            />
                     </LinearLayout>
 
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/imie"
+                        android:text='@{viewModel.childList.size()>=1? viewModel.childList.get(3).name: "", default = "NAME"}'
                         android:textSize="@dimen/big_textsize"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />

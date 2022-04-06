@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mynewapplication.databinding.FragmentHomeBinding
-import com.kidsgamesprojects.childduties.ui.BaseFragment
+import com.example.mynewapplication.ui.BaseFragment
+import com.example.mynewapplication.utils.ResourceUtils
+
 
 class HomeFragment : BaseFragment<HomeViewModel>(HomeViewModel::class.java) {
 
@@ -44,6 +46,8 @@ class HomeFragment : BaseFragment<HomeViewModel>(HomeViewModel::class.java) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = this.viewModel
+        binding.resourceUtils = ResourceUtils
         binding.lifecycleOwner = this
+
     }
 }

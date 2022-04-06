@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.mynewapplication.data.Child
-import com.kidsgamesprojects.childduties.ui.BaseFragment
-import com.kidsgamesprojects.childduties.ui.BaseViewModel
-import com.kidsgamesprojects.childduties.ui.SingleLiveEvent
+import com.example.mynewapplication.ui.BaseViewModel
+import com.example.mynewapplication.ui.SingleLiveEvent
+
 import java.util.*
 
 class ChildAddOrEditViewModel: BaseViewModel() {
@@ -19,7 +19,8 @@ class ChildAddOrEditViewModel: BaseViewModel() {
     fun prepare(args: Bundle?){
         //super.preapre(args)
         _child.value = Child(name = "Test", behaviorPoints = 0, dutyPoints = 0, drawableName ="",
-                            birthday = Calendar.getInstance().time)
+                            //birthday = Calendar.getInstance().time
+                            )
     }
 
     fun saveAddChildOrEdit(){
@@ -27,7 +28,7 @@ class ChildAddOrEditViewModel: BaseViewModel() {
     }
 
     fun showDatePicker(){
-        child.value?.let { showDatePickerRequest.postValue(it.birthday) }
+        //child.value?.let { showDatePickerRequest.postValue(it.birthday) }
 
     }
 }
