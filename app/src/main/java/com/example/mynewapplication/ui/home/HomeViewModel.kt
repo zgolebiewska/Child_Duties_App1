@@ -1,11 +1,19 @@
 package com.example.mynewapplication.ui.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavDirections
 import com.example.mynewapplication.data.Child
+import com.example.mynewapplication.ui.BaseFragment
 import com.example.mynewapplication.ui.BaseViewModel
 import com.example.mynewapplication.ui.NavigationCommand
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+
 
 
 class HomeViewModel : BaseViewModel() {
@@ -17,17 +25,36 @@ class HomeViewModel : BaseViewModel() {
         fetchChildList()
     }
 
-    private fun fetchChildList() {
-        var newList = listOf(
-            Child(name = "Bartek", dutyPoints = 10, behaviorPoints = 5, drawableName = "firstavatar" ),
-            Child(name = "Tomek", dutyPoints = 15, behaviorPoints = 7, drawableName = "secondavatar" ),
-            Child(name = "Antek", dutyPoints = 17, behaviorPoints = 4, drawableName = "thirdavatar" ),
-            Child(name = "Ala", dutyPoints = 12, behaviorPoints = 6, drawableName = "fourthavatar" )
+    //internal var child: Child? = null
 
-        )
-        _childList.value = newList
+    private fun fetchChildList() {
+
+
+
+        val db = Firebase.firestore
+        db.collection("users")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d("Firebase CLoud get", "${document.id} => ${document.data}")
+
+                    var newList = listOf(Child(document.data.toString()))
+                    _childList.value = newList
+
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w("Firebase CLoud get", "Error getting documents.", exception)
+            }
+
+
+
+
+
 
     }
+
+
 
     private val _text = MutableLiveData<String>().apply {
         //value = "This is home Fragment"
@@ -35,6 +62,9 @@ class HomeViewModel : BaseViewModel() {
     val text: LiveData<String> = _text
 
     fun onClickAddChild (){
-        navigateTo(NavigationCommand.To(HomeFragmentDirections.actionNavigationHomeToNavigationDashboard()))
+     navigateTo(NavigationCommand.To(HomeFragmentDirections.actionNavigationHomeToNavigationNotifications()))
+
     }
+
+
 }

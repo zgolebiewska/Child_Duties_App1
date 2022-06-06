@@ -11,8 +11,8 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
+            android:id="@+id/action_navigation_home_to_navigation_notifications"
+            app:destination="@id/navigation_notifications" />
     </fragment>
 
     <fragment
@@ -26,4 +26,10 @@
         android:name="com.example.mynewapplication.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_useraddedit"
+        android:name="com.example.mynewapplication.ui.home.UserAddEditFragment"
+        android:label="@string/useraddedit"
+        tools:layout="@layout/fragment_user_add_edit" />
 </navigation>

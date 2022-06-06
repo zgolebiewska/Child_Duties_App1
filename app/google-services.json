@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "241175804133",
+    "project_id": "childduties",
+    "storage_bucket": "childduties.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241175804133:android:6fc55bc150fc0f18e63c0c",
+        "android_client_info": {
+          "package_name": "com.example.mynewapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241175804133-otc70uh0v27t6nto7ali3rln6atjt2bb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3rr-DN-chiOg9XQ6ClzXzyJPeKZVEMik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241175804133-otc70uh0v27t6nto7ali3rln6atjt2bb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -13,5 +13,6 @@
     <string name="repeat_duties">repeat</string>
     <string name="child_assignment">assigned to</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="useraddedit">User Add Edit</string>
 
 </resources>
