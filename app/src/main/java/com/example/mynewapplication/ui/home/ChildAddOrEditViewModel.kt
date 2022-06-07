@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.mynewapplication.data.Child
 import com.example.mynewapplication.ui.BaseViewModel
 import com.example.mynewapplication.ui.SingleLiveEvent
-import kotlinx.coroutines.Dispatchers
 
 import java.util.*
 
@@ -19,7 +18,8 @@ class ChildAddOrEditViewModel: BaseViewModel() {
     override
     fun prepare(args: Bundle?){
         super.prepare(args)
-        _child.value = Child(name = "Test", behaviorPoints = 0, dutyPoints = 0, drawableName ="",
+        _child.value = Child(
+            name = "Test", behaviorPoints = 0, dutyPoints = 0, drawableName ="",
 //                            birthday = Calendar.getInstance().time
                             )
     }

@@ -3,14 +3,9 @@ package com.example.mynewapplication.ui.home
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.navigation.NavDirections
 import com.example.mynewapplication.data.Child
-import com.example.mynewapplication.ui.BaseFragment
 import com.example.mynewapplication.ui.BaseViewModel
 import com.example.mynewapplication.ui.NavigationCommand
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -38,7 +33,7 @@ class HomeViewModel : BaseViewModel() {
                 for (document in result) {
                     Log.d("Firebase CLoud get", "${document.id} => ${document.data}")
 
-                    var newList = listOf(Child(document.data.toString()))
+                    var newList = listOf(Child(document.id.toString(),document.data.toString()))
                     _childList.value = newList
 
                 }

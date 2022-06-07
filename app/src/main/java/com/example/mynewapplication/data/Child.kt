@@ -1,9 +1,11 @@
 package com.example.mynewapplication.data
 
-import java.util.*
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-
-data class Child (
+@Entity
+data class Child(
+    @PrimaryKey(autoGenerate = true) val id: String = 0L.toString(),
     var name: String,
     var behaviorPoints: Int = 0,
     var dutyPoints: Int = 0,

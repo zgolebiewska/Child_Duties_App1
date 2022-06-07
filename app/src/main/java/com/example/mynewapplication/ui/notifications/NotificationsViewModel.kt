@@ -1,17 +1,10 @@
 package com.example.mynewapplication.ui.notifications
 
 import android.os.Bundle
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.mynewapplication.data.Child
 import com.example.mynewapplication.ui.BaseViewModel
-import com.example.mynewapplication.ui.NavigationCommand
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.util.*
+
 //
 //@HiltViewModel
 class NotificationsViewModel : BaseViewModel() {

@@ -114,7 +114,7 @@ class NotificationsFragment : Fragment() {
         // Create a new user with a first and last name
         val child = hashMapOf(
             "name" to "Ada",
-            "behaviourPoints" to 10,
+            "behaviorPoints" to 10,
             "dutyPoints" to 0,
             "drawableName" to "firstavatar"
         )
